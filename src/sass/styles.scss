@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+$--primay-orange-000:hsl(25, 97%, 53%);
+$--neutral-grey-000:hsl(0, 0%, 100%);
+$--neutral-grey-100:hsl(217, 12%, 63%);
+$--neutral-grey-200:hsl(216, 12%, 54%);
+$--neutral-blue-700:hsl(213, 20%, 18%);
+$--neutral-blue-800:hsl(215, 27%, 12%);
+$--neutral-blue-900:hsl(216, 12%, 8%);
+
+@mixin title-font(){
+    font-family: 'Overpass', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+@mixin content-font(){
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: $--neutral-blue-900;
+    font-family: 'Overpass', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+.none {
+    display: none;
+}
+
+main {
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+.container {
+    position: relative;
+    max-width: 410px;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    background: radial-gradient(circle at top, $--neutral-blue-700, $--neutral-blue-800);
+}
+
+.container > .stage1 > .star-icon {
+    background: url('data:image/svg+xml;utf-8,<svg width="17" height="16" xmlns="http://www.w3.org/2000/svg"><path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="%23FC7614"/></svg>') 
+    center no-repeat $--neutral-blue-700;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin-bottom: 32px;
+}
+
+.rating-state > p.evaluation {
+    color: $--neutral-grey-000;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rating-state > p.evaluation-detail {
+    color: $--neutral-grey-200;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.rating-form {
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(5, auto);
+    justify-content: space-between;
+    row-gap: 32px;
+}
+
+.rate {
+    position: relative;
+}
+
+.rate > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.rate > label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $--neutral-blue-700;
+    color: $--neutral-grey-200;
+    width: 42px;
+    height: 42px;
+    transition: color .2s, background-color .2s;
+}
+
+.rate > label:hover {
+    background-color: $--neutral-grey-200;
+    color: $--neutral-grey-000;
+}
+
+.rate > input:checked + label {
+    background-color: $--primay-orange-000;
+    color: $--neutral-grey-000;
+}
+
+button.submit {
+    cursor: pointer;
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    font-family: 'Overpass', sans-serif;
+    height: 46px;
+    border-radius: 23px;
+    border: 0;
+    background-color: $--primay-orange-000;
+    color: $--neutral-grey-000;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+    transition: color .2s, background-color .2s;
+}
+
+button.submit:hover {
+    color: $--primay-orange-000;
+    background-color: $--neutral-grey-000;
+}
+
+.stage2 {
+    position: absolute;
+    // padding: 1.5rem;
+    inset: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage2 > .thanks-illustration {
+    width: 150px;
+    margin: 10px 0 1.5rem;
+    font-size: 14px;
+}
+
+.stage2 > .rating-container {
+    color: hsl(25, 97%, 53%, .8);
+    background-color: $--neutral-blue-700;
+    padding: 10px 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+}
+
+.stage2 > .thanks {
+    color: $--neutral-grey-000;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.stage2 > .appreciation {
+    color: $--neutral-grey-200;
+    line-height: 1.7;
+    font-size: 16px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 458px){
+    main {
+        padding: 0 1.5rem;
+    }
+
+    .container > .stage1 > .star-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .rate > label {
+        width: 52px;
+        height: 52px;
+    }
+}
