@@ -9,7 +9,7 @@ export default function Main() {
         <div className="stage1">
             <div className="star-icon"/>
             <div className="rating-state">
-                <p className="evaluation">How did we do?</p>
+                <h1 className="evaluation">How did we do?</h1>
                 <p className="evaluation-detail">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
                 <div className="rating-form">
                     <div className="rate"><input type="radio" name="rate" id="rate1" value="1" /><label htmlFor="rate1">1</label></div>
