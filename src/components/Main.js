@@ -24,7 +24,7 @@ export default function Main() {
     )
     const stage2 = (
         <div className="stage2">
-            <img className="thanks-illustration" src={thankYou} alt="information received"></img>
+            <img className="thanks-illustration" src={thankYou} alt="information received" width={150} height={100}></img>
             <p className="rating-container">You selected <span className="rating">{rating}</span> out of 5</p>
             <p className="thanks">Thank you!</p>
             <p className="appreciation">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
